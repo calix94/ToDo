@@ -13,16 +13,20 @@ export class TodoList{
     }
 
     eliminarTodo(id){
-        // this.todos.pop(todo);
+       this.todos= this.todos.fill(todo=>todo.id!=id)
     }
 
     marcarCompletado(id){
-        
+        for(const todo of this.todos){
+            if(todo.id ==id)
+            {
+                todo.completado=!todo.completado;
+                break;
+            }
+        } 
     }
 
     eliminarCompletados(){
-        
+               this.todos= this.todos.fill(todo=>!todo.completadod)
     }
-
-
 }
